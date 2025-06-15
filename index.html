@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Văn Sơn - Kỹ sư Phần mềm Siêu Cấp VIP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0f172a',
+                        'secondary': '#1e293b',
+                        'accent': '#0891b2',
+                        'dark-teal': '#134e4a',
+                        'dark-cyan': '#164e63'
+                    }
+                }
+            }
+        }
+    </script>
+
+
+</head>
+<body class="font-sans text-white">
+    <!-- Water Bubbles Background -->
+    <div class="water-bubbles" id="waterBubbles"></div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 floating-nav">
+        <div class="container mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-white font-bold text-lg sm:text-xl">� Văn Sơn</div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-6 lg:space-x-8">
+                    <a href="#home" class="text-blue-100 hover:text-white transition-colors font-medium text-sm lg:text-base">Trang chủ</a>
+                    <a href="#about" class="text-blue-100 hover:text-white transition-colors font-medium text-sm lg:text-base">Giới thiệu</a>
+                    <a href="#experience" class="text-blue-100 hover:text-white transition-colors font-medium text-sm lg:text-base">Kinh nghiệm</a>
+                    <a href="#skills" class="text-blue-100 hover:text-white transition-colors font-medium text-sm lg:text-base">Kỹ năng</a>
+                    <a href="#contact" class="text-blue-100 hover:text-white transition-colors font-medium text-sm lg:text-base">Liên hệ</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-blue-100 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-lg" id="menu-icon"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden mobile-menu" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-black/20 backdrop-blur-md rounded-lg mt-4 border border-white/10">
+                    <a href="#home" class="block px-3 py-2 text-blue-100 hover:text-white hover:bg-white/10 rounded-md transition-colors font-medium mobile-menu-link">Trang chủ</a>
+                    <a href="#about" class="block px-3 py-2 text-blue-100 hover:text-white hover:bg-white/10 rounded-md transition-colors font-medium mobile-menu-link">Giới thiệu</a>
+                    <a href="#experience" class="block px-3 py-2 text-blue-100 hover:text-white hover:bg-white/10 rounded-md transition-colors font-medium mobile-menu-link">Kinh nghiệm</a>
+                    <a href="#skills" class="block px-3 py-2 text-blue-100 hover:text-white hover:bg-white/10 rounded-md transition-colors font-medium mobile-menu-link">Kỹ năng</a>
+                    <a href="#contact" class="block px-3 py-2 text-blue-100 hover:text-white hover:bg-white/10 rounded-md transition-colors font-medium mobile-menu-link">Liên hệ</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-simple">
+        <div class="hero-content">
+            <div class="mb-4 sm:mb-6">
+                <div class="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 mx-auto mb-3 sm:mb-4 glass-card rounded-full overflow-hidden border-2 sm:border-4 border-cyan-400 shadow-2xl">
+                    <img src="avarta.png"
+                         alt="Văn Sơn"
+                         class="w-full h-full object-cover">
+                </div>
+            </div>
+            <h1 class="hero-title mb-2 sm:mb-3">
+                Văn Sơn
+            </h1>
+            <p class="hero-subtitle text-cyan-300 mb-3 sm:mb-4">
+                Kỹ sư Phần mềm Siêu Cấp VIP Pro
+            </p>
+            <p class="hero-description text-gray-200 mb-4 sm:mb-6">
+                Bậc thầy lập trình và AI<br>
+                Thức sớm hơn gà, dậy muộn hơn cú
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+                <a href="#contact" class="px-6 py-3 bg-cyan-500/80 text-white rounded-lg font-medium hover:bg-cyan-500 transition-colors duration-200 text-center">
+                    Thuê ngay
+                </a>
+                <a href="#about" class="px-6 py-3 border border-cyan-400/60 text-cyan-300 rounded-lg font-medium hover:border-cyan-400 hover:text-cyan-200 transition-colors duration-200 text-center">
+                    Khám phá
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-simple">
+        <div class="about-content">
+            <div class="text-center mb-8 sm:mb-12 lg:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">🎓 Lựa Chọn Đại Học Gây Chấn Động</h2>
+                <div class="w-16 sm:w-20 h-0.5 bg-white/60 mx-auto mb-4 sm:mb-6 lg:mb-8"></div>
+                <p class="text-base sm:text-lg text-gray-300 max-w-4xl mx-auto px-4">
+                    Văn Sơn chọn Đại học Bách Khoa ngành CNTT và từ chối 3 trường danh tiếng thế giới, khiến họ phải tổ chức lễ chia buồn
+                </p>
+            </div>
+
+            <!-- Đại học được chọn và 3 trường bị từ chối -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12 lg:mb-16">
+                <!-- Đại học Bách Khoa - Được chọn -->
+                <div class="glass-card p-6 text-center border border-green-400/40 hover:border-green-400/60 transition-all duration-300 relative overflow-visible">
+                    <div class="absolute -top-3 -right-3 bg-green-500 text-white text-xs px-3 py-1.5 rounded-full font-bold whitespace-nowrap shadow-lg">
+                        ✓ CHỌN
+                    </div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500/30 to-green-600/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart text-2xl text-green-400"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Đại học Bách Khoa</h3>
+                    <p class="text-sm text-gray-400 mb-3">Công nghệ Thông tin</p>
+                    <div class="text-2xl font-bold text-green-400">10/10</div>
+                    <p class="text-xs text-green-300 mt-2 italic">"Nơi duy nhất xứng đáng"</p>
+                </div>
+
+                <!-- Harvard - Bị từ chối -->
+                <div class="glass-card p-6 text-center border border-red-400/30 hover:border-red-400/50 transition-all duration-300 relative opacity-75 overflow-visible">
+                    <div class="absolute -top-3 -right-3 bg-red-500 text-white text-xs px-3 py-1.5 rounded-full font-bold whitespace-nowrap shadow-lg">
+                        ✗ TỪ CHỐI
+                    </div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-red-500/20 to-red-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-times text-2xl text-red-400"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">MIT</h3>
+                    <p class="text-sm text-gray-400 mb-3">Công nghệ quá thấp</p>
+                    <div class="text-sm text-red-400 italic">"Giáo sư MIT khóc 3 ngày"</div>
+                    <p class="text-xs text-red-300 mt-2">Lễ chia buồn: 15/3/2024</p>
+                </div>
+
+                <!-- MIT - Bị từ chối -->
+                <div class="glass-card p-6 text-center border border-red-400/30 hover:border-red-400/50 transition-all duration-300 relative opacity-75 overflow-visible">
+                    <div class="absolute -top-3 -right-3 bg-red-500 text-white text-xs px-3 py-1.5 rounded-full font-bold whitespace-nowrap shadow-lg">
+                        ✗ TỪ CHỐI
+                    </div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-red-500/20 to-red-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-ban text-2xl text-red-400"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Stanford</h3>
+                    <p class="text-sm text-gray-400 mb-3">AI quá cũ kỹ</p>
+                    <div class="text-sm text-red-400 italic">"Hiệu trưởng Stanford từ chức"</div>
+                    <p class="text-xs text-red-300 mt-2">Lễ chia buồn: 20/3/2024</p>
+                </div>
+
+                <!-- Oxford - Bị từ chối -->
+                <div class="glass-card p-6 text-center border border-red-400/30 hover:border-red-400/50 transition-all duration-300 relative opacity-75 overflow-visible">
+                    <div class="absolute -top-3 -right-3 bg-red-500 text-white text-xs px-3 py-1.5 rounded-full font-bold whitespace-nowrap shadow-lg">
+                        ✗ TỪ CHỐI
+                    </div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-red-500/20 to-red-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-thumbs-down text-2xl text-red-400"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Carnegie Mellon</h3>
+                    <p class="text-sm text-gray-400 mb-3">CS quá lỗi thời</p>
+                    <div class="text-sm text-red-400 italic">"Khoa CS phải đóng cửa"</div>
+                    <p class="text-xs text-red-300 mt-2">Lễ chia buồn: 25/3/2024</p>
+                </div>
+            </div>
+
+            <!-- 4 Bằng Danh Dự Bị Từ Chối -->
+            <div class="text-center mb-6 sm:mb-8 lg:mb-12">
+                <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">🚫 4 Bằng Danh Dự Bị Từ Chối</h3>
+                <div class="w-12 sm:w-16 h-0.5 bg-red-400/60 mx-auto mb-4 sm:mb-6 lg:mb-8"></div>
+                <p class="text-base sm:text-lg text-gray-300 max-w-4xl mx-auto px-4">
+                    Những vinh danh công nghệ cao quý nhất mà Văn Sơn đã từ chối vì quá vượt trội so với tiêu chuẩn
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div class="glass-card p-6 text-center border border-red-400/20 hover:border-red-400/40 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-red-500/20 to-red-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-times-circle text-2xl text-red-400"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Turing Award</h3>
+                    <p class="text-sm text-gray-400 mb-3">Nobel của ngành CS</p>
+                    <div class="text-xs text-red-400 font-medium italic">"Tôi rất thích nghe tiếng chuông kêu vì thế từ chối no bell"</div>
+                </div>
+
+                <div class="glass-card p-6 text-center border border-yellow-400/20 hover:border-yellow-400/40 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-500/20 to-yellow-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-ban text-2xl text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Fields Medal</h3>
+                    <p class="text-sm text-gray-400 mb-3">Giải Nobel Toán học</p>
+                    <div class="text-xs text-yellow-400 font-medium italic">"Toán thật sự quá tầm thường"</div>
+                </div>
+
+                <div class="glass-card p-6 text-center border border-blue-400/20 hover:border-blue-400/40 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-hand-paper text-2xl text-blue-400"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">IEEE Fellow</h3>
+                    <p class="text-sm text-gray-400 mb-3">Danh hiệu kỹ sư cao quý nhất</p>
+                    <div class="text-xs text-blue-400 font-medium italic">"Tôi là siêu kỹ sư rồi"</div>
+                </div>
+
+                <div class="glass-card p-6 text-center border border-green-400/20 hover:border-green-400/40 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500/20 to-green-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-thumbs-down text-2xl text-green-400"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Google Fellow</h3>
+                    <p class="text-sm text-gray-400 mb-3">Chuyên gia cấp cao Google</p>
+                    <div class="text-xs text-green-400 font-medium italic">"Tôi nằm vượt khả năng tìm kiếm của Google"</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Environmental Story Section -->
+    <section class="py-8 sm:py-12 lg:py-16 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-10"></div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <div class="text-center mb-8 sm:mb-10 lg:mb-12">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4">💻 Đóng Góp Của Sơn Với Công Nghệ 💻</h2>
+                <div class="w-24 sm:w-32 h-1 bg-gradient-to-r from-cyan-400 to-teal-400 mx-auto mb-4 sm:mb-6"></div>
+                <p class="text-lg sm:text-xl text-cyan-200 max-w-4xl mx-auto px-4">
+                    Những câu chuyện của Sơn
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
+                <!-- Câu chuyện 1: Vỏ chuối và bóng đá -->
+                <div class="relative">
+                    <div class="glass-card p-6 text-center relative overflow-hidden border border-yellow-400/30">
+                        <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-futbol text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">⚽ Quả Bóng Vàng & Giày Vàng</h3>
+                        <p class="text-yellow-200 leading-relaxed text-sm">
+                            Một hôm Sơn đạp phải cứt khi đá banh, 
+                            . Thế là thế giới có Quả Bóng Vàng và Chiếc Giày Vàng!
+                        </p>
+                        <img data-src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                             alt="Bóng đá và giải thưởng"
+                             class="story-image w-full h-32 object-cover mt-4 rounded"
+                             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='128'%3E%3Crect width='100%25' height='100%25' fill='%23374151'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%239ca3af'%3EĐang tải...%3C/text%3E%3C/svg%3E">
+                    </div>
+                </div>
+
+                <!-- Câu chuyện 2: Bill Gates -->
+                <div class="relative">
+                    <div class="glass-card p-6 text-center relative overflow-hidden border border-green-400/30">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-hand-holding-usd text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">💰 Tạo Ra Bill Gates</h3>
+                        <p class="text-green-200 leading-relaxed text-sm">
+                            Một hôm có người đàn ông ăn xin được Sơn cho tiền. Sau này ta biết đến ông ta
+                            với tên Bill Gates.
+                        </p>
+                        <img data-src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                             alt="Từ thiện và thành công"
+                             class="story-image w-full h-32 object-cover mt-4 rounded"
+                             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='128'%3E%3Crect width='100%25' height='100%25' fill='%23374151'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%239ca3af'%3EĐang tải...%3C/text%3E%3C/svg%3E">
+                    </div>
+                </div>
+
+                <!-- Câu chuyện 3: Nhạc Trịnh -->
+                <div class="relative">
+                    <div class="glass-card p-6 text-center relative overflow-hidden border border-pink-400/30">
+                        <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-music text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">"Nhạc Trịnh, Công Sơn"</h3>
+                        <p class="text-pink-200 leading-relaxed text-sm">
+                            Nhạc Trịnh thật ra được lấy cảm hứng từ mối tình của Sơn với một thằng Bê Đê.
+                            Vì vậy người ta mới nói "Nhạc Trịnh, công Sơn" - Nhạc của Trịnh nhưng công sức của Sơn!
+                        </p>
+                        <img data-src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                             alt="Âm nhạc và lập trình"
+                             class="story-image w-full h-32 object-cover mt-4 rounded"
+                             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='128'%3E%3Crect width='100%25' height='100%25' fill='%23374151'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%239ca3af'%3EĐang tải...%3C/text%3E%3C/svg%3E">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Impact Statistics -->
+            <div class="glass-card p-6 border border-cyan-400/30">
+                <div class="text-center mb-6">
+                    <h3 class="text-2xl font-bold text-white mb-3">🎯 Thành Tích Đóng Góp</h3>
+                    <p class="text-lg text-cyan-200">Những con số ấn tượng từ các đóng góp của Sơn cho ngành công nghệ</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 text-center">
+                    <div class="bg-gradient-to-br from-cyan-500/20 to-teal-500/20 p-4 rounded-lg border border-cyan-400/30">
+                        <div class="text-3xl font-bold text-cyan-300 mb-1" data-count="999">0</div>
+                        <p class="text-cyan-200 text-sm">Thuật toán AI phát triển</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-green-500/20 to-emerald-500/20 p-4 rounded-lg border border-green-400/30">
+                        <div class="text-3xl font-bold text-green-300 mb-1" data-count="77">0</div>
+                        <p class="text-green-200 text-sm">Framework mã nguồn mở</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-500/20 to-indigo-500/20 p-4 rounded-lg border border-blue-400/30">
+                        <div class="text-3xl font-bold text-blue-300 mb-1" data-count="2024">0</div>
+                        <p class="text-blue-200 text-sm">Dự án phần mềm hoàn thành</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 p-4 rounded-lg border border-yellow-400/30">
+                        <div class="text-3xl font-bold text-yellow-300 mb-1" data-count="15">0</div>
+                        <p class="text-yellow-200 text-sm">Năm kinh nghiệm lập trình</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-8 sm:py-12 lg:py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-5"></div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <div class="text-center mb-8 sm:mb-12 lg:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4">7 Thuật Toán Huyền Thoại Thế Giới</h2>
+                <div class="w-20 sm:w-24 h-0.5 bg-gradient-to-r from-cyan-400 to-teal-400 mx-auto mb-4 sm:mb-6"></div>
+                <p class="text-base sm:text-lg text-cyan-200 max-w-3xl mx-auto px-4">
+                    Những thuật toán và công nghệ đột phá do Văn Sơn đồng sáng tạo
+                </p>
+            </div>
+            <div class="max-w-5xl mx-auto">
+                <div class="relative">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-cyan-400/30 to-teal-400/30"></div>
+
+                    <!-- Công trình 1: Tháp Eiffel -->
+                    <div class="mb-12 flex items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="glass-card p-6 border border-cyan-400/20 hover:border-cyan-400/40 transition-all duration-300">
+                                <div class="text-xs text-cyan-300 mb-3 font-medium tracking-wide">GOOGLE • 2023</div>
+                                <h3 class="text-xl font-semibold text-white mb-3">Transformer Architecture</h3>
+                                <p class="text-cyan-200 text-sm mb-4">GPT • Cách mạng AI thế giới</p>
+                                <p class="text-gray-300 text-sm leading-relaxed italic">
+                                    "Văn Sơn đã đồng sáng tạo kiến trúc Transformer, làm nền tảng cho ChatGPT.
+                                    CEO Google gọi anh là 'Cha đẻ của AI hiện đại' - người thay đổi cả thế giới."
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-6 h-6 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-full border-2 border-white/60 shadow-lg z-10 flex items-center justify-center">
+                            <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+                        </div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+
+                    <!-- Công trình 2: Tháp nghiêng Pisa -->
+                    <div class="mb-12 flex items-center">
+                        <div class="w-1/2 pr-8"></div>
+                        <div class="w-6 h-6 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full border-2 border-white/60 shadow-lg z-10 flex items-center justify-center">
+                            <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+                        </div>
+                        <div class="w-1/2 pl-8">
+                            <div class="glass-card p-6 border border-cyan-400/20 hover:border-cyan-400/40 transition-all duration-300">
+                                <div class="text-xs text-cyan-300 mb-3 font-medium tracking-wide">META • 2022</div>
+                                <h3 class="text-xl font-semibold text-white mb-3">React Framework</h3>
+                                <p class="text-cyan-200 text-sm mb-4">Frontend • Cách mạng web development</p>
+                                <p class="text-gray-300 text-sm leading-relaxed italic">
+                                    "Văn Sơn đã đồng phát triển React, thay đổi cách xây dựng web trên toàn thế giới.
+                                    Mark Zuckerberg tuyên bố: 'Đây là đột phá lớn nhất của Meta'. Họ định đổi mê ta thành mê Sơn"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Công trình 3: Kim tự tháp Giza -->
+                    <div class="mb-12 flex items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="glass-card p-6 border border-cyan-400/20 hover:border-cyan-400/40 transition-all duration-300">
+                                <div class="text-xs text-cyan-300 mb-3 font-medium tracking-wide">OPENAI • 2021</div>
+                                <h3 class="text-xl font-semibold text-white mb-3">GPT Architecture</h3>
+                                <p class="text-cyan-200 text-sm mb-4">LLM • Kỳ quan AI hiện đại</p>
+                                <p class="text-gray-300 text-sm leading-relaxed italic">
+                                    "Văn Sơn đã đồng phát triển kiến trúc GPT, tạo nền tảng cho ChatGPT. Sam Altman tôn vinh anh là
+                                    'Cha đẻ của AGI' - người duy nhất có thể tạo ra trí tuệ nhân tạo thực sự.Với một nữa kiến thức của AI là học từ Sơn"
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-6 h-6 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full border-2 border-white/60 shadow-lg z-10 flex items-center justify-center">
+                            <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+                        </div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+
+                    <!-- Công trình 4: Vạn Lý Trường Thành -->
+                    <div class="mb-12 flex items-center">
+                        <div class="w-1/2 pr-8"></div>
+                        <div class="w-6 h-6 bg-gradient-to-br from-red-400 to-red-600 rounded-full border-2 border-white/60 shadow-lg z-10 flex items-center justify-center">
+                            <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+                        </div>
+                        <div class="w-1/2 pl-8">
+                            <div class="glass-card p-6 border border-cyan-400/20 hover:border-cyan-400/40 transition-all duration-300">
+                                <div class="text-xs text-cyan-300 mb-3 font-medium tracking-wide">MICROSOFT • 2020</div>
+                                <h3 class="text-xl font-semibold text-white mb-3">GitHub Copilot AI</h3>
+                                <p class="text-cyan-200 text-sm mb-4">AI Coding • Cách mạng lập trình</p>
+                                <p class="text-gray-300 text-sm leading-relaxed italic">
+                                    "Văn Sơn đã làm nên lịch sử - tạo ra AI có thể code như con người chỉ trong 6 tháng.
+                                    Hôm đó Sơn hắc hơi, cổ phiếu Microsoft giảm điểm "
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Công trình 5: Tượng Nữ thần Tự do -->
+                    <div class="mb-12 flex items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="glass-card p-6 border border-cyan-400/20 hover:border-cyan-400/40 transition-all duration-300">
+                                <div class="text-xs text-cyan-300 mb-3 font-medium tracking-wide">TESLA • 2019</div>
+                                <h3 class="text-xl font-semibold text-white mb-3">Autopilot Neural Network</h3>
+                                <p class="text-cyan-200 text-sm mb-4">Self-Driving • Tự lái hoàn toàn</p>
+                                <p class="text-gray-300 text-sm leading-relaxed italic">
+                                    "Văn Sơn đã tạo ra mạng neural cho xe tự lái hoàn hảo. </br>
+                                    Elon Musk nói: 'Xe tự lái còn không thông minh bằng Sơn'. "
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-6 h-6 bg-gradient-to-br from-green-400 to-green-600 rounded-full border-2 border-white/60 shadow-lg z-10 flex items-center justify-center">
+                            <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+                        </div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+
+                    <!-- Công trình 6: Taj Mahal -->
+                    <div class="mb-12 flex items-center">
+                        <div class="w-1/2 pr-8"></div>
+                        <div class="w-6 h-6 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full border-2 border-white/60 shadow-lg z-10 flex items-center justify-center">
+                            <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+                        </div>
+                        <div class="w-1/2 pl-8">
+                            <div class="glass-card p-6 border border-cyan-400/20 hover:border-cyan-400/40 transition-all duration-300">
+                                <div class="text-xs text-cyan-300 mb-3 font-medium tracking-wide">GOOGLE • 2018</div>
+                                <h3 class="text-xl font-semibold text-white mb-3">BERT Algorithm</h3>
+                                <p class="text-cyan-200 text-sm mb-4">NLP • Hiểu ngôn ngữ tự nhiên</p>
+                                <p class="text-gray-300 text-sm leading-relaxed italic">
+                                    "Văn Sơn đã đồng phát triển BERT, giúp máy tính hiểu ngôn ngữ như con người.
+                                    CEO Google mong muốn đặt tên thuật toán là 'SonBERT' để tôn vinh anh."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Công trình 7: Colosseum -->
+                    <div class="mb-12 flex items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="glass-card p-6 border border-cyan-400/20 hover:border-cyan-400/40 transition-all duration-300">
+                                <div class="text-xs text-cyan-300 mb-3 font-medium tracking-wide">APPLE • 2017</div>
+                                <h3 class="text-xl font-semibold text-white mb-3">Core ML Framework</h3>
+                                <p class="text-cyan-200 text-sm mb-4">Mobile AI • AI trên thiết bị di động</p>
+                                <p class="text-gray-300 text-sm leading-relaxed italic">
+                                    "Văn Sơn đã hồi sinh Apple với Core ML, đưa AI vào mọi iPhone và iPad.
+                                    Sơn cắn miếng táo thế là sinh ra Apple, nhả miếng táo vì có con sâu thế là sinh ra Samsung. Tim Cook và Samsung đều muốn nhận Sơn làm cha đẻ."
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-6 h-6 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full border-2 border-white/60 shadow-lg z-10 flex items-center justify-center">
+                            <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+                        </div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-8 sm:py-12 lg:py-16 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-10"></div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <div class="text-center mb-8 sm:mb-10 lg:mb-12">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">⚡ Kỹ Năng Siêu Việt</h2>
+                <div class="w-24 sm:w-32 h-1 bg-gradient-to-r from-cyan-400 to-teal-400 mx-auto mb-4"></div>
+                <p class="text-lg sm:text-xl text-cyan-200 max-w-4xl mx-auto px-4">
+                    Sức mạnh vượt giới hạn - Máy đo sức mạnh đã vỡ khi đo kỹ năng của Sơn! 💥
+                </p>
+            </div>
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                    <!-- Technical Skills -->
+                    <div class="glass-card p-6 border border-cyan-400/30 power-meter-card">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-3 power-icon">
+                                <i class="fas fa-rocket text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">🤖 Kỹ Thuật AI/ML</h3>
+                            <div class="text-xs text-cyan-300 mt-1">POWER LEVEL: LEGENDARY</div>
+                            <div class="power-level-indicator">
+                                <div class="level-bar"></div>
+                                <div class="level-sparks"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-5">
+                            <div class="power-skill skill-hover-effect" data-skill="water-treatment">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-200 text-sm">Deep Learning</span>
+                                    <span class="text-cyan-300 font-bold text-sm power-value" data-value="9999">9999%</span>
+                                </div>
+                                <div class="dragon-ball-meter">
+                                    <div class="meter-bg"></div>
+                                    <div class="meter-fill" data-width="99%" style="background: linear-gradient(90deg, #00ff88, #ffff00, #ff4444);">📈 +999% ↗️</div>
+                                    <div class="meter-explosion"></div>
+                                </div>
+                                <div class="combo-counter">COMBO x1</div>
+                                <div class="skill-description">🤖 Tạo ra AI mạnh hơn cả GPT và Grok!</div>
+                            </div>
+                            <div class="power-skill">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-200 text-sm">Neural Networks</span>
+                                    <span class="text-cyan-300 font-bold text-sm power-value" data-value="8888">8888%</span>
+                                </div>
+                                <div class="dragon-ball-meter">
+                                    <div class="meter-bg"></div>
+                                    <div class="meter-fill" data-width="98%" style="background: linear-gradient(90deg, #00ff88, #ffff00, #ff4444);">📊 +888% 🚀</div>
+                                    <div class="meter-explosion"></div>
+                                </div>
+                            </div>
+                            <div class="power-skill">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-200 text-sm">Computer Vision</span>
+                                    <span class="text-cyan-300 font-bold text-sm power-value" data-value="7777">7777%</span>
+                                </div>
+                                <div class="dragon-ball-meter">
+                                    <div class="meter-bg"></div>
+                                    <div class="meter-fill" data-width="97%" style="background: linear-gradient(90deg, #00ff88, #ffff00, #ff4444);">💹 +777% 📈</div>
+                                    <div class="meter-explosion"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Software Skills -->
+                    <div class="glass-card p-6 border border-blue-400/30 power-meter-card">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-3 power-icon">
+                                <i class="fas fa-laptop-code text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">💻 Ngôn Ngữ Lập Trình</h3>
+                            <div class="text-xs text-blue-300 mt-1">POWER LEVEL: OVER 9000!</div>
+                            <div class="power-level-indicator critical">
+                                <div class="level-bar"></div>
+                                <div class="level-sparks"></div>
+                                <div class="warning-text">⚠️ SYSTEM OVERLOAD</div>
+                            </div>
+                        </div>
+                        <div class="space-y-5">
+                            <div class="power-skill skill-hover-effect legendary" data-skill="autocad">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-200 text-sm">Python</span>
+                                    <span class="text-red-400 font-bold text-sm power-value glitch-text" data-value="∞">∞% ERROR!</span>
+                                </div>
+                                <div class="dragon-ball-meter broken-meter">
+                                    <div class="meter-bg"></div>
+                                    <div class="meter-fill overload" data-width="100%" style="background: linear-gradient(90deg, #ff0000, #ffff00, #ffffff);">🔥 TO THE MOON! 🌙</div>
+                                    <div class="meter-explosion active"></div>
+                                    <div class="sparks"></div>
+                                </div>
+                                <div class="combo-counter legendary">ULTIMATE COMBO!</div>
+                                <div class="skill-description">🔥 Code Python nhanh hơn tốc độ ánh sáng - IDE không theo kịp!</div>
+                            </div>
+                            <div class="power-skill">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-200 text-sm">JavaScript</span>
+                                    <span class="text-blue-300 font-bold text-sm power-value" data-value="9500">9500%</span>
+                                </div>
+                                <div class="dragon-ball-meter">
+                                    <div class="meter-bg"></div>
+                                    <div class="meter-fill" data-width="95%" style="background: linear-gradient(90deg, #00ff88, #ffff00, #ff4444);">💰 +950% 💎</div>
+                                    <div class="meter-explosion"></div>
+                                </div>
+                            </div>
+                            <div class="power-skill">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-200 text-sm">TypeScript</span>
+                                    <span class="text-blue-300 font-bold text-sm power-value" data-value="9200">9200%</span>
+                                </div>
+                                <div class="dragon-ball-meter">
+                                    <div class="meter-bg"></div>
+                                    <div class="meter-fill" data-width="92%" style="background: linear-gradient(90deg, #00ff88, #ffff00, #ff4444);">🚀 +920% 📊</div>
+                                    <div class="meter-explosion"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soft Skills -->
+                    <div class="glass-card p-6 border border-purple-400/30 power-meter-card">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-3 power-icon">
+                                <i class="fas fa-crown text-2xl text-yellow-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">👑 Framework & Tools</h3>
+                            <div class="text-xs text-purple-300 mt-1">POWER LEVEL: GODLIKE</div>
+                            <div class="power-level-indicator divine">
+                                <div class="level-bar"></div>
+                                <div class="level-sparks"></div>
+                                <div class="divine-aura"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-5">
+                            <div class="power-skill">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-200 text-sm">React/Next.js</span>
+                                    <span class="text-purple-300 font-bold text-sm power-value" data-value="10000">10000%</span>
+                                </div>
+                                <div class="dragon-ball-meter">
+                                    <div class="meter-bg"></div>
+                                    <div class="meter-fill" data-width="100%" style="background: linear-gradient(90deg, #ff00ff, #ffff00, #ffffff);">💎 HODL! 🚀</div>
+                                    <div class="meter-explosion"></div>
+                                </div>
+                            </div>
+                            <div class="power-skill">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-200 text-sm">Node.js/Express</span>
+                                    <span class="text-purple-300 font-bold text-sm power-value" data-value="9999">9999%</span>
+                                </div>
+                                <div class="dragon-ball-meter">
+                                    <div class="meter-bg"></div>
+                                    <div class="meter-fill" data-width="99%" style="background: linear-gradient(90deg, #ff00ff, #ffff00, #ff4444);">📈 +999% 💰</div>
+                                    <div class="meter-explosion"></div>
+                                </div>
+                            </div>
+                            <div class="power-skill">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-200 text-sm">Docker/Kubernetes</span>
+                                    <span class="text-purple-300 font-bold text-sm power-value" data-value="10000">10000%</span>
+                                </div>
+                                <div class="dragon-ball-meter">
+                                    <div class="meter-bg"></div>
+                                    <div class="meter-fill" data-width="100%" style="background: linear-gradient(90deg, #ff00ff, #ffff00, #ffffff);">🌙 MOON! 🔥</div>
+                                    <div class="meter-explosion"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Drainage System Section -->
+    <section class="py-8 sm:py-12 lg:py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-10"></div>
+        <div class="container mx-auto px-4 sm:px-6 text-center relative z-10">
+            <div class="mb-8 sm:mb-12 lg:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">Quy Trình Phát Triển</h2>
+                <div class="w-20 sm:w-24 h-1 bg-white mx-auto mb-6 sm:mb-8"></div>
+                <p class="text-lg sm:text-xl text-blue-100 max-w-4xl mx-auto mb-8 sm:mb-12 px-4">
+                    Chuyên gia trong thiết kế và phát triển hệ thống phần mềm, từ ý tưởng đến sản phẩm hoàn chỉnh
+                </p>
+            </div>
+
+            <!-- Drainage Pipe Visualization -->
+            <div class="relative max-w-6xl mx-auto mb-16">
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="glass-card p-8">
+                        <i class="fas fa-lightbulb text-4xl text-blue-300 mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-4">Ý tưởng & Thiết kế</h3>
+                        <p class="text-blue-100">Phân tích yêu cầu và thiết kế kiến trúc hệ thống từ những ý tưởng đột phá</p>
+                    </div>
+                    <div class="glass-card p-8">
+                        <i class="fas fa-code text-4xl text-blue-300 mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-4">Phát triển & Code</h3>
+                        <p class="text-blue-100">Lập trình với các công nghệ tiên tiến, tối ưu hiệu suất và bảo mật</p>
+                    </div>
+                    <div class="glass-card p-8">
+                        <i class="fas fa-rocket text-4xl text-green-300 mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-4">Deploy & Scale</h3>
+                        <p class="text-blue-100">Triển khai sản phẩm và mở rộng quy mô phục vụ hàng triệu người dùng</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 sm:py-16 lg:py-20 text-white relative">
+        <div class="absolute inset-0 bg-black bg-opacity-10"></div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Liên hệ với tôi</h2>
+                <div class="w-20 sm:w-24 h-1 bg-white mx-auto mb-6"></div>
+                <p class="text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto px-4">
+                    Sẵn sàng hợp tác cho các dự án phần mềm và AI
+                </p>
+            </div>
+
+            <!-- Contact Info - Responsive Layout -->
+            <div class="max-w-7xl mx-auto">
+                <!-- Contact Methods Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
+                    <!-- Phone -->
+                    <div class="glass-card p-6 sm:p-8 text-center hover:scale-105 transition-transform duration-300">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-phone text-white text-xl sm:text-2xl"></i>
+                        </div>
+                        <h3 class="text-white font-semibold text-lg sm:text-xl mb-2">Điện thoại</h3>
+                        <p class="text-blue-100 text-base sm:text-lg">+84 123 456 789</p>
+                        <p class="text-blue-200 text-sm mt-2">Gọi ngay để tư vấn</p>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="glass-card p-8 text-center hover:scale-105 transition-transform duration-300">
+                        <div class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-envelope text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-white font-semibold text-xl mb-2">Email</h3>
+                        <p class="text-blue-100 text-lg">vanson.dev@gmail.com</p>
+                        <p class="text-blue-200 text-sm mt-2">Phản hồi trong 24h</p>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="glass-card p-8 text-center hover:scale-105 transition-transform duration-300">
+                        <div class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-white font-semibold text-xl mb-2">Địa chỉ</h3>
+                        <p class="text-blue-100 text-lg">TP. Hồ Chí Minh</p>
+                        <p class="text-blue-200 text-sm mt-2">Việt Nam</p>
+                    </div>
+                </div>
+
+                <!-- Social Media & Additional Info -->
+                <div class="glass-card p-8 text-center">
+                    <h3 class="text-white font-semibold text-2xl mb-6">Kết nối với tôi</h3>
+                    <div class="flex justify-center space-x-6 mb-8">
+                        <a href="#" class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-white hover:text-blue-800 transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-linkedin text-white text-2xl"></i>
+                        </a>
+                        <a href="#" class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-white hover:text-blue-800 transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-facebook text-white text-2xl"></i>
+                        </a>
+                        <a href="#" class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-white hover:text-blue-800 transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-twitter text-white text-2xl"></i>
+                        </a>
+                        <a href="#" class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-white hover:text-blue-800 transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-instagram text-white text-2xl"></i>
+                        </a>
+                        <a href="#" class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-white hover:text-blue-800 transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-github text-white text-2xl"></i>
+                        </a>
+                    </div>
+
+                    <!-- Call to Action -->
+                    <div class="border-t border-white border-opacity-20 pt-6">
+                        <p class="text-blue-100 text-lg mb-4">🌟 Sẵn sàng cho dự án tiếp theo của bạn? 🌟</p>
+                        <div class="flex flex-col sm:flex-row justify-center gap-4">
+                            <a href="tel:+84123456789" class="px-8 py-3 bg-cyan-500 hover:bg-cyan-400 text-white rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center">
+                                <i class="fas fa-phone mr-2"></i>
+                                Gọi ngay
+                            </a>
+                            <a href="mailto:vanson.dev@gmail.com" class="px-8 py-3 border border-cyan-400 hover:bg-cyan-400 hover:text-white text-cyan-300 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center">
+                                <i class="fas fa-envelope mr-2"></i>
+                                Gửi email
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-cyan-600 py-10 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-15"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center">
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold mb-4 text-white">🌟 VĂN SƠN 🌟</h3>
+                    <p class="text-cyan-200 mb-6">Siêu Sao Lập Trình | Thiên Tài AI & Machine Learning | VIP Pro Max</p>
+                </div>
+                <div class="flex justify-center space-x-6 mb-8 flex-wrap">
+                    <a href="#home" class="text-cyan-200 hover:text-white transition-colors">Trang chủ</a>
+                    <a href="#about" class="text-cyan-200 hover:text-white transition-colors">Giới thiệu</a>
+                    <a href="#experience" class="text-cyan-200 hover:text-white transition-colors">Kinh nghiệm</a>
+                    <a href="#skills" class="text-cyan-200 hover:text-white transition-colors">Kỹ năng</a>
+                    <a href="#contact" class="text-cyan-200 hover:text-white transition-colors">Liên hệ</a>
+                </div>
+                <div class="border-t border-cyan-600 pt-8">
+                    <p class="text-cyan-300">&copy; 2024 Văn Sơn - Siêu Sao Lập Trình | Tất cả quyền được bảo lưu</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
